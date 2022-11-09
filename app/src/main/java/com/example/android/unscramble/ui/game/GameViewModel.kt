@@ -40,7 +40,6 @@ class GameViewModel : ViewModel() {
 
     init {
         getNextWord()
-        Log.d("GameViewModel", "GameViewModel Created!")
     }
 
 
