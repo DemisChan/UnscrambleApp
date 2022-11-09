@@ -21,15 +21,28 @@ class GameViewModel : ViewModel() {
     val currentScrambledWord: LiveData<String>
         get() = _currentScrambledWord
 
+//    For TalkBack
+//    val currentScrambledWord: LiveData<Spannable> = Transformations.map(_currentScrambledWord) {
+//        if (it == null) {
+//            SpannableString("")
+//        } else {
+//            val scrambledWord = it.toString()
+//            val spannable: Spannable = SpannableString(scrambledWord)
+//            spannable.setSpan(
+//                TtsSpan.VerbatimBuilder(scrambledWord).build(),
+//                0,
+//                scrambledWord.length,
+//                Spannable.SPAN_INCLUSIVE_INCLUSIVE
+//            )
+//            spannable
+//        }
+//    }
+
     init {
         getNextWord()
         Log.d("GameViewModel", "GameViewModel Created!")
     }
 
-    override fun onCleared() {
-        super.onCleared()
-        Log.d("GameViewModel", "GameViewModel destroyed!")
-    }
 
     /*
      * Gets a random word for the list of words and shuffles the letters in it.
