@@ -8,9 +8,11 @@ import androidx.lifecycle.ViewModel
 class GameViewModel : ViewModel() {
     private var wordList: MutableList<String> = mutableListOf()
     private lateinit var currentWord: String
+
     private val _score = MutableLiveData(0)
     val score: LiveData<Int>
         get() = _score
+
     private val _currentWordCount = MutableLiveData(0)
     val currentWordCount: LiveData<Int>
         get() = _currentWordCount
@@ -21,12 +23,12 @@ class GameViewModel : ViewModel() {
 
     init {
         getNextWord()
-        Log.d("GameFragment", "GameViewModel Created!")
+        Log.d("GameViewModel", "GameViewModel Created!")
     }
 
     override fun onCleared() {
         super.onCleared()
-        Log.d("GameFragment", "GameViewModel destroyed!")
+        Log.d("GameViewModel", "GameViewModel destroyed!")
     }
 
     /*
